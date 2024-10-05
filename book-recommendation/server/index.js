@@ -1,3 +1,5 @@
+import connectDB from "./database/db_connection.js"
+
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
@@ -7,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb://0.0.0.0:27017/user");
+connectDB();
 
 app.post("/login", (req, res) => {
     const {email, password} = req.body;
