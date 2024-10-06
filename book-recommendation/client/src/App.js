@@ -4,7 +4,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import Signup from './components/Signup'
 import Login from './components/Login'
-import Home from './components/Home'
+import Search from './components/Search'
+import BookSearch from './components/BookSearch'
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path='/register' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/home' element={<Home />}/>
+        <Route path='/search' element={<Search />}/>
+        <Route path='/booksearch' element={<BookSearch />}/>
       </Routes>
     </BrowserRouter>
   )

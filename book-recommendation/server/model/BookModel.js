@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose"
 
  const BookSchema = new mongoose.Schema({
     Title:String,
@@ -7,6 +7,6 @@ const mongoose = require('mongoose')
     Image:String
  })
 
- const BookModel  = mongoose.model("book", BookSchema)
+ const BookModel  = mongoose.model("Book", BookSchema, 'Books')
  
- module.exports = BookModel
+export default BookModel

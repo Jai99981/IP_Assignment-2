@@ -1,15 +1,21 @@
 import connectDB from "./database/db_connection.js"
+import UserModel from "./model/User.js"
+import express from "express"
+import cors from "cors"
+import router from "./routes/routes.js"
 
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require("cors")
-const UserModel = require("./model/User")
+// const express = require("express")
+// const mongoose = require("mongoose")
+// const cors = require("cors")
+// const UserModel = require("./model/User")
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
 connectDB();
+
+app.use("/api", router)
 
 app.post("/login", (req, res) => {
     const {email, password} = req.body;
